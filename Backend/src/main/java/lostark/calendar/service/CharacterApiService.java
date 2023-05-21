@@ -24,8 +24,8 @@ public class CharacterApiService {
 	public JSONArray Characters(String characterName) {
 		try {
 			characterName = URLEncoder.encode(characterName, "UTF-8");
-			String url = "https://developer-lostark.game.onstove.com/characters/"+characterName+"/siblings";
-			InputStreamReader api = apiService.getApi(url, LostarkApiKey);
+			String link = "https://developer-lostark.game.onstove.com/characters/"+characterName+"/siblings";
+			InputStreamReader api = apiService.getApi(link, LostarkApiKey);
 			JSONParser parser = new JSONParser();
 			JSONArray array = (JSONArray) parser.parse(api);
 			return array;
