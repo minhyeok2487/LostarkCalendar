@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class CharacterApiController {
 
 	private final CharacterApiService characterApiService;
-	@GetMapping("/api/character/{characterName}")
-	public ArrayList character(@PathVariable String characterName) {
+	@GetMapping("api/character/{characterName}")
+	public ArrayList getCharacter(@PathVariable String characterName) {
 		return characterApiService.Characters(characterName);
 	}
 
