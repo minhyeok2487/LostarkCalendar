@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class MarketApiService {
+public class MarketService {
 
     @Value("${Lostark-API-Key}")
     private String LostarkApiKey;
