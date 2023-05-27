@@ -1,6 +1,7 @@
 package lostark.calendar.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import lostark.calendar.domain.marketItems.MarketItem;
 import lostark.calendar.domain.marketItems.MarketItemRepository;
 import org.json.simple.JSONObject;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class MarketService {
 
     @Value("${Lostark-API-Key}")
@@ -36,6 +38,8 @@ public class MarketService {
     }
 
     public List<MarketItem> getDBMarketItems() {
-        return marketItemRepository.findAll();
+        List<MarketItem> findAll = marketItemRepository.findAll();
+        System.out.println("데이터 사이즈 : "+findAll.size());
+        return findAll;
     }
 }
